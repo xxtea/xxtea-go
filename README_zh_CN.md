@@ -1,18 +1,18 @@
-# XXTEA for Golang
+# XXTEA 加密算法的 Golang 实现
 
-## Introduction
+## 简介
 
-XXTEA is a fast and secure encryption algorithm. This is a XXTEA library for Golang.
+XXTEA 是一个快速安全的加密算法。本项目是 XXTEA 加密算法的 Golang 实现。
 
-It is different from the original XXTEA encryption algorithm. It encrypts and decrypts []byte instead of []uint32, and the key is also []byte.
+它不同于原始的 XXTEA 加密算法。它是针对 []byte 类型数据进行加密的，而不是针对 uint32 数组。同样，密钥也是 []byte 类型。
 
-## Installation
+## 安装
 
 ```sh
 go get github.com/xxtea/xxtea-go/xxtea
 ```
 
-## Usage
+## 使用
 
 ```go
 
