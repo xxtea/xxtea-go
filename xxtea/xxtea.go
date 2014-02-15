@@ -2,7 +2,7 @@
 |                                                          |
 | xxtea.go                                                 |
 |                                                          |
-| XXTEA encryption arithmetic library for Golang.          |
+| XXTEA encryption algorithm library for Golang.           |
 |                                                          |
 | Encryption Algorithm Authors:                            |
 |      David J. Wheeler                                    |
@@ -111,6 +111,9 @@ func decrypt(v []uint32, k []uint32) []uint32 {
 	return v
 }
 
+// Encrypt the data with key.
+// data is the bytes to be encrypted.
+// key is the encrypt key. It is the same as the decrypt key.
 func Encrypt(data []byte, key []byte) []byte {
 	if data == nil || len(data) == 0 {
 		return data
@@ -118,6 +121,9 @@ func Encrypt(data []byte, key []byte) []byte {
 	return toBytes(encrypt(toUint32s(data, true), toUint32s(key, false)), false)
 }
 
+// Decrypt the data with key.
+// data is the bytes to be decrypted.
+// key is the decrypted key. It is the same as the encrypt key.
 func Decrypt(data []byte, key []byte) []byte {
 	if data == nil || len(data) == 0 {
 		return data
