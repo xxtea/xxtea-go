@@ -9,7 +9,7 @@
 |      Roger M. Needham                                    |
 |                                                          |
 | Code Author: Ma Bingyao <mabingyao@gmail.com>            |
-| LastModified: Feb 15, 2014                               |
+| LastModified: Mar 10, 2015                               |
 |                                                          |
 \**********************************************************/
 
@@ -72,7 +72,6 @@ func encrypt(v []uint32, k []uint32) []uint32 {
 	k = fixk(k)
 	var y, z, sum, e, p, q uint32
 	z = v[n]
-	y = v[0]
 	sum = 0
 	for q = 6 + 52/length; q > 0; q-- {
 		sum += delta
@@ -94,7 +93,6 @@ func decrypt(v []uint32, k []uint32) []uint32 {
 	n := length - 1
 	k = fixk(k)
 	var y, z, sum, e, p, q uint32
-	z = v[n]
 	y = v[0]
 	q = 6 + 52/length
 	for sum = q * delta; sum != 0; sum -= delta {
